@@ -1,0 +1,24 @@
+_commit: v1.4.28
+_src_path: gh:serious-scaffold/ss-cpp
+author_email: msclock@126.com
+author_name: msclock
+codecov_notify_builds: 1
+codecov_threshold: 5%
+compile_target: ''
+copyright_holder: msclock
+copyright_license: Apache Software License
+copyright_year: '2024'
+create_devcontainer: true
+docs_type: sphinx
+exe_target: ''
+header_target: smooth7zip
+organization_name: msclock
+project_description: A wrapper for 7zip
+project_name: Smooth7zip
+repo_host_type: github.com
+repo_name: smooth7zip
+repo_namespace: msclock
+use_cdash: false
+use_codecov: true
+use_conan: false
+use_cpm: false
