@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "smooth7zip",
+  "description": "A wrapper for 7zip",
+  "builtin-baseline": "ce1916404fc6f2b645f419a6d47b7ebafe686582",
+  "homepage": "https://github.com/msclock/smooth7zip",
+  "dependencies": [
+    "spdlog",
+    "7zip",
+    "cmake-modules",
+    "robotology-cmake-ycm"
+  ],
+  "overrides": [
+    {
+      "name": "spdlog",
+      "version": "1.13.0"
+    },
+    {
+      "name": "7zip",
+      "version-string": "23.01"
+    },
+    {
+      "name": "cmake-modules",
+      "version": "1.4.35"
+    },
+    {
+      "name": "robotology-cmake-ycm",
+      "version": "0.16.2"
+    }
+  ],
+  "features": {
+    "test": {
+      "description": "Dependencies for testing",
+      "dependencies": [
+        {
+          "name": "gtest",
+          "version>=": "1.14.0"
+        }
+      ]
+    }
+  },
+  "vcpkg-configuration": {
+    "registries": [
+      {
+        "kind": "git",
+        "baseline": "f09077e2e4df1b730cb2c0768298f4eaaf10afa9",
+        "repository": "https://github.com/msclock/cmake-registry",
+        "packages": [
+          "cmake-modules",
+          "robotology-cmake-ycm",
+          "vcpkg-cmake-module"
+        ]
+      }
+    ],
+    "overlay-ports": [
+      "cmake/vcpkg/ports"
+    ],
+    "overlay-triplets": [
+      "cmake/vcpkg/triplets"
+    ]
+  }
+}

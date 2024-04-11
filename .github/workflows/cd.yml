@@ -1,0 +1,79 @@
+name: CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - published
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_COLOR: 3
+
+jobs:
+  pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-22.04
+    if: ${{ github.ref_name == github.event.repository.default_branch || (github.event_name == 'release' && github.event.action == 'published') }}
+    permissions:
+      contents: write
+      id-token: write
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
+
+      - name: Cache
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+        with:
+          path: |
+            ~/vcpkg
+            ~/.cache/pip
+            ~/.cache/vcpkg
+          key: x64-linux-gcc-13-${{ hashFiles('vcpkg.json') }}
+          restore-keys: x64-linux-gcc-13-${{ hashFiles('vcpkg.json') }}
+
+      - uses: aminya/setup-cpp@v1
+        with:
+          compiler: gcc-13
+          cmake: true
+          ninja: true
+          ccache: true
+          doxygen: true
+
+      - uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
+        with:
+          python-version: 3.x
+
+      - name: Install docs dependencies
+        run: |
+          pip install -r docs/requirements.txt
+
+      - name: Configure
+        run: >
+          cmake -S . --preset=default
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo
+          -DCMAKE_CXX_STANDARD=20
+          -DCMAKE_COMPILE_WARNING_AS_ERROR=ON
+          -DVCPKG_TARGET_TRIPLET=x64-linux
+          -DUSE_SANITIZER=OFF
+          -DCODE_COVERAGE=OFF
+          -DBUILD_TESTING=OFF
+
+      - name: Build Docs
+        run: cmake --build out/build/default --target smooth7zip-docs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
