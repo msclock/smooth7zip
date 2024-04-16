@@ -115,7 +115,7 @@ jobs:
 
 
   check-on-macos:
-    runs-on: macos-12
+    runs-on: macos-13
     needs: [pre-commit]
     timeout-minutes: 15
     strategy:
@@ -439,7 +439,7 @@ jobs:
 
 
   cppcheck:
-    runs-on: macos-12
+    runs-on: macos-13
     needs: [pre-commit]
     timeout-minutes: 15
 
