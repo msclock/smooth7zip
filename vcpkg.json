@@ -7,6 +7,7 @@
   "dependencies": [
     "spdlog",
     "7zip",
+    "safeclib",
     "cmake-modules",
     "robotology-cmake-ycm"
   ],
@@ -18,6 +19,10 @@
     {
       "name": "7zip",
       "version-string": "23.01"
+    },
+    {
+      "name": "safeclib",
+      "version": "3.8.1"
     },
     {
       "name": "cmake-modules",

@@ -1,5 +1,6 @@
 find_package(spdlog CONFIG REQUIRED)
 find_package(7zip CONFIG REQUIRED)
+find_package(safeclib CONFIG REQUIRED)
 
 set(target_name smooth7zip)
 
@@ -9,7 +10,8 @@ target_include_interface_directories(
   ${target_name} ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_BINARY_DIR}/git/include)
 
-target_link_libraries(${target_name} INTERFACE spdlog::spdlog 7zip::7zip)
+target_link_libraries(${target_name} INTERFACE spdlog::spdlog 7zip::7zip
+                                               safeclib::safeclib)
 
 install_target(
   NAME
@@ -25,7 +27,8 @@ install_target(
   ${CMAKE_SOURCE_DIR}/LICENSE
   DEPENDENCIES
   spdlog::spdlog
-  7zip::7zip)
+  7zip::7zip
+  safeclib::safeclib)
 
 if(BUILD_TESTING)
   add_test_subdirectory(tests)
