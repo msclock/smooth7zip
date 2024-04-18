@@ -4,6 +4,7 @@
 #include <vector>
 
 #include <7zip/7zip.h>
+#include <safeclib/safec.h>
 
 namespace std {
 inline std::string to_string(const GUID& guid) {

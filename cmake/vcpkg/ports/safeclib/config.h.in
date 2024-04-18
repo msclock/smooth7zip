@@ -1,0 +1,798 @@
+#ifndef __SAFECLIB_CONF_H__
+#define __SAFECLIB_CONF_H__
+
+/* If the compiler supports inline assembly define it to that keyword here */
+#define ASM_INLINE @ASM_INLINE@
+
+/* Define to 1 if you have the <altivec.h> header file. */
+#cmakedefine HAVE_ALTIVEC_H
+
+/* Define to 1 if you have the <arm_acle.h> header file. */
+#cmakedefine HAVE_ARM_ACLE_H
+
+/* Define to 1 if you have the <arm_neon.h> header file. */
+#cmakedefine HAVE_ARM_NEON_H
+
+/* Define to 1 if you have the `asctime_r' function. */
+#cmakedefine HAVE_ASCTIME_R
+
+/* Define to 1 if you have the `asctime_s' function. */
+#cmakedefine HAVE_ASCTIME_S
+
+/* Defined to 1 when the compiler supports attribute diagnose_if, since
+   clang-5 */
+#cmakedefine HAVE_ATTRIBUTE_DIAGNOSE_IF
+
+/* Define to 1 if you have the `bcmp' function. */
+#cmakedefine HAVE_BCMP
+
+/* Define to 1 if you have the `bsearch_s' function. */
+#cmakedefine HAVE_BSEARCH_S
+
+/* Defined to 1 when the compiler supports c11 */
+#cmakedefine HAVE_C11
+
+/* Define to 1 if you have the `ctime_r' function. */
+#cmakedefine HAVE_CTIME_R
+
+/* Define to 1 if you have the `ctime_s' function. */
+#cmakedefine HAVE_CTIME_S
+
+/* Define to 1 if you have the <ctype.h> header file. */
+#cmakedefine HAVE_CTYPE_H
+
+/* Defined to 1 when the compiler is C++ */
+#cmakedefine HAVE_CXX
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#cmakedefine HAVE_DLFCN_H
+
+/* Define to 1 if you have the <emmintrin.h> header file. */
+#cmakedefine HAVE_EMMINTRIN_H
+
+/* Define to 1 if you have the <errno.h> header file. */
+#cmakedefine HAVE_ERRNO_H
+
+/* Define to 1 if you have the `explicit_bzero' function. */
+#cmakedefine HAVE_EXPLICIT_BZERO
+
+/* Define to 1 if you have the `explicit_memset' function. */
+#cmakedefine HAVE_EXPLICIT_MEMSET
+
+/* Define to 1 if you have the `fopen_s' function. */
+#cmakedefine HAVE_FOPEN_S
+
+/* Define to 1 if you have the `fprintf_s' function. */
+#cmakedefine HAVE_FPRINTF_S
+
+/* Define to 1 if you have the `freopen_s' function. */
+#cmakedefine HAVE_FREOPEN_S
+
+/* Define to 1 if you have the `fscanf_s' function. */
+#cmakedefine HAVE_FSCANF_S
+
+/* Define to 1 if the system has the `format' function attribute */
+#cmakedefine HAVE_FUNC_ATTRIBUTE_FORMAT
+
+/* Define to 1 if the system has the `format_wprintf' function attribute */
+#cmakedefine HAVE_FUNC_ATTRIBUTE_FORMAT_WPRINTF
+
+/* Define to 1 if the system has the `format_wscanf' function attribute */
+#cmakedefine HAVE_FUNC_ATTRIBUTE_FORMAT_WSCANF
+
+/* Define to 1 if the system has the `malloc' function attribute */
+#cmakedefine HAVE_FUNC_ATTRIBUTE_MALLOC
+
+/* Define to 1 if the system has the `returns_nonnull' function attribute */
+#cmakedefine HAVE_FUNC_ATTRIBUTE_RETURNS_NONNULL
+
+/* Define to 1 if you have the `fwprintf_s' function. */
+#cmakedefine HAVE_FWPRINTF_S
+
+/* Define to 1 if you have the `fwscanf_s' function. */
+#cmakedefine HAVE_FWSCANF_S
+
+/* Define to 1 if you have the `getenv_s' function. */
+#cmakedefine HAVE_GETENV_S
+
+/* Define to 1 if you have the `gets_s' function. */
+#cmakedefine HAVE_GETS_S
+
+/* Define to 1 if you have the `gmtime_r' function. */
+#cmakedefine HAVE_GMTIME_R
+
+/* Define to 1 if you have the `gmtime_s' function. */
+#cmakedefine HAVE_GMTIME_S
+
+/* Define to 1 if you have the <intrin.h> header file. */
+#cmakedefine HAVE_INTRIN_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#cmakedefine HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `iswdigit' function. */
+#cmakedefine HAVE_ISWDIGIT
+
+/* Define to 1 if you have the `iswspace' function. */
+#cmakedefine HAVE_ISWSPACE
+
+/* Define to 1 if you have the <langinfo.h> header file. */
+#cmakedefine HAVE_LANGINFO_H
+
+/* Define to 1 if you have the <limits.h> header file. */
+#cmakedefine HAVE_LIMITS_H
+
+/* Define to 1 if you have the `localtime_r' function. */
+#cmakedefine HAVE_LOCALTIME_R
+
+/* Define to 1 if you have the `localtime_s' function. */
+#cmakedefine HAVE_LOCALTIME_S
+
+/* Define to 1 if you have the <malloc.h> header file. */
+#cmakedefine HAVE_MALLOC_H
+
+/* Define to 1 if you have the <mbarrier.h> header file. */
+#cmakedefine HAVE_MBARRIER_H
+
+/* Define to 1 if you have the `mbsrtowcs' function. */
+#cmakedefine HAVE_MBSRTOWCS
+
+/* Define to 1 if you have the `mbsrtowcs_s' function. */
+#cmakedefine HAVE_MBSRTOWCS_S
+
+/* Define to 1 if <wchar.h> declares mbstate_t. */
+#cmakedefine HAVE_MBSTATE_T
+
+/* Define to 1 if you have the `mbstowcs' function. */
+#cmakedefine HAVE_MBSTOWCS
+
+/* Define to 1 if you have the `mbstowcs_s' function. */
+#cmakedefine HAVE_MBSTOWCS_S
+
+/* Define to 1 if you have the `memccpy' function. */
+#cmakedefine HAVE_MEMCCPY
+
+/* Define to 1 if you have the `memccpy_s' function. */
+#cmakedefine HAVE_MEMCCPY_S
+
+/* Define to 1 if you have the `memchr_s' function. */
+#cmakedefine HAVE_MEMCHR_S
+
+/* Define to 1 if you have the `memcpy_s' function. */
+#cmakedefine HAVE_MEMCPY_S
+
+/* Define to 1 if you have the `memmove_s' function. */
+#cmakedefine HAVE_MEMMOVE_S
+
+/* Define to 1 if you have the <memory.h> header file. */
+#cmakedefine HAVE_MEMORY_H
+
+/* Define to 1 if you have the `memrchr' function. */
+#cmakedefine HAVE_MEMRCHR
+
+/* Define to 1 if you have the `memrchr_s' function. */
+#cmakedefine HAVE_MEMRCHR_S
+
+/* Define to 1 if you have the `memset' function. */
+#cmakedefine HAVE_MEMSET
+
+/* Define to 1 if you have the `memset_s' function. */
+#cmakedefine HAVE_MEMSET_S
+
+/* Define to 1 if you have the `memzero_s' function. */
+#cmakedefine HAVE_MEMZERO_S
+
+/* Define to 1 if you have the <mmintrin.h> header file. */
+#cmakedefine HAVE_MMINTRIN_H
+
+/* Define to 1 to enable the compat normalization modes for wcsnorm_s NFKC and
+   NFKD */
+#cmakedefine HAVE_NORM_COMPAT
+
+/* Define to 1 if you have the `printf_s' function. */
+#cmakedefine HAVE_PRINTF_S
+
+/* Define to 1 if you have the `qsort_s' function. */
+#cmakedefine HAVE_QSORT_S
+
+/* Define to 1 if you have the `scanf_s' function. */
+#cmakedefine HAVE_SCANF_S
+
+/* Define to 1 if you have the `secure_getenv' function. */
+#cmakedefine HAVE_SECURE_GETENV
+
+/* Define to 1 if you have the `snprintf_s' function. */
+#cmakedefine HAVE_SNPRINTF_S
+
+/* Define to 1 if you have the `snwprintf_s' function. */
+#cmakedefine HAVE_SNWPRINTF_S
+
+/* Define to 1 if you have the <spe.h> header file. */
+#cmakedefine HAVE_SPE_H
+
+/* Define to 1 if you have the `sprintf_s' function. */
+#cmakedefine HAVE_SPRINTF_S
+
+/* Define to 1 if you have the `sscanf_s' function. */
+#cmakedefine HAVE_SSCANF_S
+
+/* Define to 1 if stdbool.h conforms to C99. */
+#cmakedefine HAVE_STDBOOL_H
+
+/* Define to 1 if you have the <stddef.h> header file. */
+#cmakedefine HAVE_STDDEF_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#cmakedefine HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdio.h> header file. */
+#cmakedefine HAVE_STDIO_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#cmakedefine HAVE_STDLIB_H
+
+/* Define to 1 if you have the `stpcpy' function. */
+#cmakedefine HAVE_STPCPY
+
+/* Define to 1 if you have the `stpcpy_s' function. */
+#cmakedefine HAVE_STPCPY_S
+
+/* Define to 1 if you have the `stpncpy' function. */
+#cmakedefine HAVE_STPNCPY
+
+/* Define to 1 if you have the `stpncpy_s' function. */
+#cmakedefine HAVE_STPNCPY_S
+
+/* Define to 1 if you have the `strcasecmp' function. */
+#cmakedefine HAVE_STRCASECMP
+
+/* Define to 1 if you have the `strcasestr' function. */
+#cmakedefine HAVE_STRCASESTR
+
+/* Define to 1 if you have the `strcat_s' function. */
+#cmakedefine HAVE_STRCAT_S
+
+/* Define to 1 if you have the `strchr_s' function. */
+#cmakedefine HAVE_STRCHR_S
+
+/* Define to 1 if you have the `strcmp' function. */
+#cmakedefine HAVE_STRCMP
+
+/* Define to 1 if you have the `strcpy_s' function. */
+#cmakedefine HAVE_STRCPY_S
+
+/* Define to 1 if you have the `strcspn' function. */
+#cmakedefine HAVE_STRCSPN
+
+/* Define to 1 if you have the `strerror' function. */
+#cmakedefine HAVE_STRERROR
+
+/* Define to 1 if you have the `strerror_s' function. */
+#cmakedefine HAVE_STRERROR_S
+
+/* Define to 1 if you have the <strings.h> header file. */
+#cmakedefine HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#cmakedefine HAVE_STRING_H
+
+/* Define to 1 if you have the `strncat_s' function. */
+#cmakedefine HAVE_STRNCAT_S
+
+/* Define to 1 if you have the `strncpy_s' function. */
+#cmakedefine HAVE_STRNCPY_S
+
+/* Define to 1 if you have the `strnlen' function. */
+#cmakedefine HAVE_STRNLEN
+
+/* Define to 1 if you have the `strnlen_s' function. */
+#cmakedefine HAVE_STRNLEN_S
+
+/* Define to 1 if you have the `strnset_s' function. */
+#cmakedefine HAVE_STRNSET_S
+
+/* Define to 1 if you have the `strnstr' function. */
+#cmakedefine HAVE_STRNSTR
+
+/* Define to 1 if 'strnstr' is usable. */
+#cmakedefine HAVE_STRNSTR_OK
+
+/* Define to 1 if you have the `strpbrk' function. */
+#cmakedefine HAVE_STRPBRK
+
+/* Define to 1 if you have the `strrchr' function. */
+#cmakedefine HAVE_STRRCHR
+
+/* Define to 1 if you have the `strrchr_s' function. */
+#cmakedefine HAVE_STRRCHR_S
+
+/* Define to 1 if you have the `strset_s' function. */
+#cmakedefine HAVE_STRSET_S
+
+/* Define to 1 if you have the `strspn' function. */
+#cmakedefine HAVE_STRSPN
+
+/* Define to 1 if you have the `strspn_s' function. */
+#cmakedefine HAVE_STRSPN_S
+
+/* Define to 1 if you have the `strstr' function. */
+#cmakedefine HAVE_STRSTR
+
+/* Define to 1 if you have the `strstr_s' function. */
+#cmakedefine HAVE_STRSTR_S
+
+/* Define to 1 if you have the `strtok_s' function. */
+#cmakedefine HAVE_STRTOK_S
+
+/* Define to 1 if you have the `strzero_s' function. */
+#cmakedefine HAVE_STRZERO_S
+
+/* Define to 1 if you have the `swprintf_s' function. */
+#cmakedefine HAVE_SWPRINTF_S
+
+/* Define to 1 if you have the `swscanf_s' function. */
+#cmakedefine HAVE_SWSCANF_S
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#cmakedefine HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#cmakedefine HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#cmakedefine HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the `timingsafe_bcmp' function. */
+#cmakedefine HAVE_TIMINGSAFE_BCMP
+
+/* Define to 1 if you have the `timingsafe_memcmp' function. */
+#cmakedefine HAVE_TIMINGSAFE_MEMCMP
+
+/* Define to 1 if you have the `tmpfile_s' function. */
+#cmakedefine HAVE_TMPFILE_S
+
+/* Define to 1 if you have the `tmpnam_s' function. */
+#cmakedefine HAVE_TMPNAM_S
+
+/* Define if struct tm has the tm_gmtoff member. */
+#cmakedefine HAVE_TM_GMTOFF
+
+/* Define to 1 if you have the `towctrans' function. */
+#cmakedefine HAVE_TOWCTRANS
+
+/* Define to 1 if you have the `towfc_s' function. */
+#cmakedefine HAVE_TOWFC_S
+
+/* Define to 1 if you have the `towlower' function. */
+#cmakedefine HAVE_TOWLOWER
+
+/* Define to 1 if you have the `towupper' function. */
+#cmakedefine HAVE_TOWUPPER
+
+/* Define to 1 if 'towupper' is usable. */
+#cmakedefine HAVE_TOWUPPER_OK
+
+/* Define to 1 if the system has the type `uintptr_t'. */
+#cmakedefine HAVE_UINTPTR_T
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#cmakedefine HAVE_UNISTD_H
+
+/* Uses -Wuser-defined-warnings */
+#cmakedefine HAVE_USER_DEFINED_WARNINGS
+
+/* Define to 1 if you have the <valgrind/valgrind.h> header file. */
+#cmakedefine HAVE_VALGRIND_VALGRIND_H
+
+/* Define to 1 if you have the `vfprintf_s' function. */
+#cmakedefine HAVE_VFPRINTF_S
+
+/* Define to 1 if you have the `vfscanf_s' function. */
+#cmakedefine HAVE_VFSCANF_S
+
+/* Define to 1 if you have the `vfwprintf_s' function. */
+#cmakedefine HAVE_VFWPRINTF_S
+
+/* Define to 1 if you have the `vfwscanf_s' function. */
+#cmakedefine HAVE_VFWSCANF_S
+
+/* Define to 1 if you have the `vprintf_s' function. */
+#cmakedefine HAVE_VPRINTF_S
+
+/* Define to 1 if you have the `vscanf_s' function. */
+#cmakedefine HAVE_VSCANF_S
+
+/* Define to 1 if you have the `vsnprintf_s' function. */
+#cmakedefine HAVE_VSNPRINTF_S
+
+/* Define to 1 if you have the `vsnwprintf' function. */
+#cmakedefine HAVE_VSNWPRINTF
+
+/* Define to 1 if you have the `vsnwprintf_s' function. */
+#cmakedefine HAVE_VSNWPRINTF_S
+
+/* Define to 1 if you have the `vsprintf_s' function. */
+#cmakedefine HAVE_VSPRINTF_S
+
+/* Define to 1 if you have the `vsscanf_s' function. */
+#cmakedefine HAVE_VSSCANF_S
+
+/* Define to 1 if you have the `vswprintf' function. */
+#cmakedefine HAVE_VSWPRINTF
+
+/* Define to 1 if you have the `vswprintf_s' function. */
+#cmakedefine HAVE_VSWPRINTF_S
+
+/* Define to 1 if you have the `vswscanf' function. */
+#cmakedefine HAVE_VSWSCANF
+
+/* Define to 1 if you have the `vswscanf_s' function. */
+#cmakedefine HAVE_VSWSCANF_S
+
+/* Define to 1 if you have the `vwprintf_s' function. */
+#cmakedefine HAVE_VWPRINTF_S
+
+/* Define to 1 if you have the `vwscanf_s' function. */
+#cmakedefine HAVE_VWSCANF_S
+
+/* Have -Wrestrict */
+#cmakedefine HAVE_WARNING_RESTRICT
+
+/* Define to 1 if you have the <wchar.h> header file. */
+#cmakedefine HAVE_WCHAR_H
+
+/* Define to 1 if you have the `wcrtomb_s' function. */
+#cmakedefine HAVE_WCRTOMB_S
+
+/* Define to 1 if you have the `wcscat_s' function. */
+#cmakedefine HAVE_WCSCAT_S
+
+/* Define to 1 if you have the `wcscmp' function. */
+#cmakedefine HAVE_WCSCMP
+
+/* Define to 1 if you have the `wcscmp_s' function. */
+#cmakedefine HAVE_WCSCMP_S
+
+/* Define to 1 if you have the `wcscoll_s' function. */
+#cmakedefine HAVE_WCSCOLL_S
+
+/* Define to 1 if you have the `wcscpy_s' function. */
+#cmakedefine HAVE_WCSCPY_S
+
+/* Define to 1 if you have the `wcsfc_s' function. */
+#cmakedefine HAVE_WCSFC_S
+
+/* Define to 1 if you have the `wcsicmp_s' function. */
+#cmakedefine HAVE_WCSICMP_S
+
+/* Define to 1 if you have the `wcslwr_s' function. */
+#cmakedefine HAVE_WCSLWR_S
+
+/* Define to 1 if you have the `wcsncat_s' function. */
+#cmakedefine HAVE_WCSNCAT_S
+
+/* Define to 1 if you have the `wcsncmp_s' function. */
+#cmakedefine HAVE_WCSNCMP_S
+
+/* Define to 1 if you have the `wcsncpy_s' function. */
+#cmakedefine HAVE_WCSNCPY_S
+
+/* Define to 1 if you have the `wcsnlen_s' function. */
+#cmakedefine HAVE_WCSNLEN_S
+
+/* Define to 1 if you have the `wcsnset_s' function. */
+#cmakedefine HAVE_WCSNSET_S
+
+/* Define to 1 if you have the `wcsrtombs_s' function. */
+#cmakedefine HAVE_WCSRTOMBS_S
+
+/* Define to 1 if you have the `wcsset_s' function. */
+#cmakedefine HAVE_WCSSET_S
+
+/* Define to 1 if you have the `wcsstr' function. */
+#cmakedefine HAVE_WCSSTR
+
+/* Define to 1 if you have the `wcsstr_s' function. */
+#cmakedefine HAVE_WCSSTR_S
+
+/* Define to 1 if you have the `wcstok_s' function. */
+#cmakedefine HAVE_WCSTOK_S
+
+/* Define to 1 if you have the `wcstombs_s' function. */
+#cmakedefine HAVE_WCSTOMBS_S
+
+/* Define to 1 if you have the `wcsupr_s' function. */
+#cmakedefine HAVE_WCSUPR_S
+
+/* Define to 1 if you have the `wctomb_s' function. */
+#cmakedefine HAVE_WCTOMB_S
+
+/* Define to 1 if you have the `wmemchr' function. */
+#cmakedefine HAVE_WMEMCHR
+
+/* Define to 1 if you have the `wmemcmp' function. */
+#cmakedefine HAVE_WMEMCMP
+
+/* Define to 1 if you have the `wmemcmp_s' function. */
+#cmakedefine HAVE_WMEMCMP_S
+
+/* Define to 1 if you have the `wmemcpy_s' function. */
+#cmakedefine HAVE_WMEMCPY_S
+
+/* Define to 1 if you have the `wmemmove_s' function. */
+#cmakedefine HAVE_WMEMMOVE_S
+
+/* Define to 1 if you have the `wprintf_s' function. */
+#cmakedefine HAVE_WPRINTF_S
+
+/* Define to 1 if you have the `wscanf_s' function. */
+#cmakedefine HAVE_WSCANF_S
+
+/* Define to 1 if you have the <x86intrin.h> header file. */
+#cmakedefine HAVE_X86INTRIN_H
+
+/* Define to 1 if you have the <xmmintrin.h> header file. */
+#cmakedefine HAVE_XMMINTRIN_H
+
+/* Define to 1 if the system has the type `_Bool'. */
+#cmakedefine HAVE__BOOL
+
+/* Define to 1 if you have the `_memcmp_s_chk' function. */
+#cmakedefine HAVE__MEMCMP_S_CHK
+
+/* Define to 1 if you have the `_memcpy_s_chk' function. */
+#cmakedefine HAVE__MEMCPY_S_CHK
+
+/* Define to 1 if you have the `_memmove_s_chk' function. */
+#cmakedefine HAVE__MEMMOVE_S_CHK
+
+/* Define to 1 if you have the `_memset_s_chk' function. */
+#cmakedefine HAVE__MEMSET_S_CHK
+
+/* Define to 1 if you have the `_printf_s_chk' function. */
+#cmakedefine HAVE__PRINTF_S_CHK
+
+/* Define to 1 if you have the `_snprintf_s_chk' function. */
+#cmakedefine HAVE__SNPRINTF_S_CHK
+
+/* Define to 1 if you have the `_sprintf_s_chk' function. */
+#cmakedefine HAVE__SPRINTF_S_CHK
+
+/* Define to 1 if you have the `_strcat_s_chk' function. */
+#cmakedefine HAVE__STRCAT_S_CHK
+
+/* Define to 1 if you have the `_strcpy_s_chk' function. */
+#cmakedefine HAVE__STRCPY_S_CHK
+
+/* Define to 1 if you have the `_strncat_s_chk' function. */
+#cmakedefine HAVE__STRNCAT_S_CHK
+
+/* Define to 1 if you have the `_strncpy_s_chk' function. */
+#cmakedefine HAVE__STRNCPY_S_CHK
+
+/* Define to 1 if you have the `_strnlen_s_chk' function. */
+#cmakedefine HAVE__STRNLEN_S_CHK
+
+/* Define to 1 if you have the `_swprintf_s_chk' function. */
+#cmakedefine HAVE__SWPRINTF_S_CHK
+
+/* Define to 1 if you have the `_vfprintf_s_chk' function. */
+#cmakedefine HAVE__VFPRINTF_S_CHK
+
+/* Define to 1 if you have the `_vfwprintf_s_chk' function. */
+#cmakedefine HAVE__VFWPRINTF_S_CHK
+
+/* Define to 1 if you have the `_vsnprintf_s_chk' function. */
+#cmakedefine HAVE__VSNPRINTF_S_CHK
+
+/* Define to 1 if you have the `_vsprintf_s_chk' function. */
+#cmakedefine HAVE__VSPRINTF_S_CHK
+
+/* Define to 1 if you have the `__bnd_chk_ptr_bounds' function. */
+#cmakedefine HAVE___BND_CHK_PTR_BOUNDS
+
+/* Define to 1 if you have the `__bnd_null_ptr_bounds' function. */
+#cmakedefine HAVE___BND_NULL_PTR_BOUNDS
+
+/* Define to 1 if you have the `__bnd_set_ptr_bounds' function. */
+#cmakedefine HAVE___BND_SET_PTR_BOUNDS
+
+/* Define to 1 if the system has the `__builtin_constant_p' built-in function
+ */
+#cmakedefine HAVE___BUILTIN_CONSTANT_P
+
+/* Define to 1 if the system has the `__builtin_ctz' built-in function */
+#cmakedefine HAVE___BUILTIN_CTZ
+
+/* Define to 1 if the system has the `__builtin_object_size' built-in function
+ */
+#cmakedefine HAVE___BUILTIN_OBJECT_SIZE
+
+/* Define to 1 if the system has the `__builtin___bnd_chk_ptr_bounds' built-in
+   function */
+#cmakedefine HAVE___BUILTIN___BND_CHK_PTR_BOUNDS
+
+/* Define to 1 if the system has the `__builtin___bnd_null_ptr_bounds'
+   built-in function */
+#cmakedefine HAVE___BUILTIN___BND_NULL_PTR_BOUNDS
+
+/* Define to 1 if the system has the `__builtin___bnd_set_ptr_bounds' built-in
+   function */
+#cmakedefine HAVE___BUILTIN___BND_SET_PTR_BOUNDS
+
+/* Define to 1 if the system has the `__builtin___dsb' built-in function */
+#cmakedefine HAVE___BUILTIN___DSB
+
+/* Define to 1 if the system has the `__builtin___isb' built-in function */
+#cmakedefine HAVE___BUILTIN___ISB
+
+/* Define to 1 if the system has the `__dsb' built-in function */
+#cmakedefine HAVE___DSB
+
+/* Define to 1 if the system has the `__isb' built-in function */
+#cmakedefine HAVE___ISB
+
+/* Define to 1 if you have the `__memcpy_chk' function. */
+#cmakedefine HAVE___MEMCPY_CHK
+
+/* Define to 1 if you have the `__memmove_chk' function. */
+#cmakedefine HAVE___MEMMOVE_CHK
+
+/* Define to 1 if you have the `__memset_chk' function. */
+#cmakedefine HAVE___MEMSET_CHK
+
+/* Define to 1 if you have the `__printf_chk' function. */
+#cmakedefine HAVE___PRINTF_CHK
+
+/* Define to 1 if you have the `__snprintf_chk' function. */
+#cmakedefine HAVE___SNPRINTF_CHK
+
+/* Define to 1 if you have the `__sprintf_chk' function. */
+#cmakedefine HAVE___SPRINTF_CHK
+
+/* Define to 1 if you have the `__strcat_chk' function. */
+#cmakedefine HAVE___STRCAT_CHK
+
+/* Define to 1 if you have the `__strcpy_chk' function. */
+#cmakedefine HAVE___STRCPY_CHK
+
+/* Define to 1 if you have the `__strncat_chk' function. */
+#cmakedefine HAVE___STRNCAT_CHK
+
+/* Define to 1 if you have the `__strncpy_chk' function. */
+#cmakedefine HAVE___STRNCPY_CHK
+
+/* Define to 1 if you have the `__swprintf_chk' function. */
+#cmakedefine HAVE___SWPRINTF_CHK
+
+/* Define to 1 if you have the `__vfprintf_chk' function. */
+#cmakedefine HAVE___VFPRINTF_CHK
+
+/* Define to 1 if you have the `__vfwprintf_chk' function. */
+#cmakedefine HAVE___VFWPRINTF_CHK
+
+/* Define to 1 if you have the `__vsnprintf_chk' function. */
+#cmakedefine HAVE___VSNPRINTF_CHK
+
+/* Define to 1 if you have the `__vsprintf_chk' function. */
+#cmakedefine HAVE___VSPRINTF_CHK
+
+/* Define to 1 if you have the `__vsscanf_chk' function. */
+#cmakedefine HAVE___VSSCANF_CHK
+
+/* Define to 1 if you have the `__vswscanf_chk' function. */
+#cmakedefine HAVE___VSWSCANF_CHK
+
+/* Define to the address where bug reports for this package should be sent. */
+#define PACKAGE_BUGREPORT "@PACKAGE_BUGREPORT@"
+
+/* Define to the full name of this package. */
+#define PACKAGE_NAME "@PACKAGE_NAME@"
+
+/* Define to the full name and version of this package. */
+#define PACKAGE_STRING "@PACKAGE_STRING@"
+
+/* Define to the one symbol short name of this package. */
+#define PACKAGE_TARNAME "@PACKAGE_TARNAME@"
+
+/* Define to the home page for this package. */
+#define PACKAGE_URL "@PACKAGE_URL@"
+
+/* Define to the version of this package. */
+#define PACKAGE_VERSION "@PACKAGE_VERSION@"
+
+/* Version number of package */
+#define VERSION "@PACKAGE_VERSION@"
+
+/* Defined to 1 when the compiler supports c99, mostly (...) macros */
+#define SAFECLIB_HAVE_C99 1
+
+/* The size of `size_t', as computed by sizeof. */
+#define SIZEOF_SIZE_T @SIZEOF_SIZE_T@
+
+/* The number of bytes in type time_t */
+#define SIZEOF_TIME_T @SIZEOF_TIME_T@
+
+/* The number of bytes in type wchar_t */
+#define SIZEOF_WCHAR_T @SIZEOF_WCHAR_T@
+
+/* Define to 1 if all of the C90 standard headers exist (not just the ones
+   required in a freestanding environment). This macro is provided for
+   backward compatibility; new code need not use it. */
+#define STDC_HEADERS 1
+
+/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. This
+   macro is obsolete. */
+#define TIME_WITH_SYS_TIME 1
+
+/* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#cmakedefine _UINT32_T
+
+/* Define for Solaris 2.5.1 so the uint64_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#cmakedefine _UINT64_T
+
+/* Define for Solaris 2.5.1 so the uint8_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#cmakedefine _UINT8_T
+
+/* Define to empty if `const' does not conform to ANSI C. */
+/* #undef const */
+
+/* Define to `__inline__' or `__inline' if that's what the C compiler
+   calls it, or to nothing if 'inline' is not supported under any name.  */
+#ifndef __cplusplus
+/* #undef inline */
+#endif
+
+/* Define to the type of a signed integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef int32_t */
+
+/* Define to a type if <wchar.h> does not define. */
+/* #undef mbstate_t */
+
+/* Define to the equivalent of the C99 'restrict' keyword, or to
+   nothing if this is not supported.  Do not define if restrict is
+   supported only directly.  */
+#cmakedefine restrict @restrict@
+
+/* Work around a bug in older versions of Sun C++, which did not
+   #define __restrict__ or support _Restrict or __restrict__
+   even though the corresponding Sun C compiler ended up with
+   "#define restrict _Restrict" or "#define restrict __restrict__"
+   in the previous line.  This workaround can be removed once
+   we assume Oracle Developer Studio 12.5 (2016) or later.  */
+#if defined __SUNPRO_CC && !defined __RESTRICT && !defined __restrict__
+#define _Restrict
+#define __restrict__
+#endif
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+/* #undef size_t */
+
+/* Define to the type of an unsigned integer type of width exactly 16 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef uint16_t */
+
+/* Define to the type of an unsigned integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef uint32_t */
+
+/* Define to the type of an unsigned integer type of width exactly 64 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef uint64_t */
+
+/* Define to the type of an unsigned integer type of width exactly 8 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef uint8_t */
+
+/* Define to the type of an unsigned integer type wide enough to hold a
+   pointer, if such a type exists, and if the system does not define it. */
+/* #undef uintptr_t */
+
+#endif /* __SAFECLIB_CONF_H__ */
