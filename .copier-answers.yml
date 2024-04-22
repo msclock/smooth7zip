@@ -1,4 +1,4 @@
-_commit: v1.4.31
+_commit: v1.4.34
 _src_path: gh:serious-scaffold/ss-cpp
 author_email: msclock@126.com
 author_name: msclock
@@ -20,5 +20,6 @@ repo_name: smooth7zip
 repo_namespace: msclock
 use_cdash: false
 use_codecov: true
+use_codeql: true
 use_conan: false
 use_cpm: false
