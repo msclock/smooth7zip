@@ -1,4 +1,4 @@
-_commit: v1.4.40
+_commit: v1.4.47
 _src_path: gh:serious-scaffold/ss-cpp
 author_email: msclock@126.com
 author_name: msclock
@@ -15,9 +15,9 @@ header_target: smooth7zip
 organization_name: msclock
 project_description: A wrapper for 7zip
 project_name: Smooth7zip
-repo_host_type: github.com
 repo_name: smooth7zip
 repo_namespace: msclock
+repo_platform: github
 use_cdash: false
 use_codecov: true
 use_codeql: true

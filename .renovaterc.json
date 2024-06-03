@@ -33,7 +33,7 @@
       "postUpgradeTasks": {
         "commands": [
           "git stash",
-          "pip install copier",
+          "pip install copier==9.2.0",
           "copier update --defaults --vcs-ref {{{newVersion}}}"
         ]
       },
@@ -49,13 +49,15 @@
   ],
   "customManagers": [
     {
+      "description": "Update python packages installed with pip or pipx",
       "customType": "regex",
       "datasourceTemplate": "pypi",
       "fileMatch": [
-        "^\\.github\\/workflows\\/ci.yml$"
+        "^\\.github/workflows/.+\\.yml$",
+        "^\\.renovaterc\\.json$"
       ],
       "matchStrings": [
-        "pipx install (?<depName>.*?)==(?<currentValue>.*?)"
+        "pipx? install.* (?<depName>.*?)==(?<currentValue>.*?)[\\s\";]"
       ]
     },
     {
