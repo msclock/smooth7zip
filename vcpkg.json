@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
   "name": "smooth7zip",
   "description": "A wrapper for 7zip",
-  "builtin-baseline": "ce1916404fc6f2b645f419a6d47b7ebafe686582",
+  "builtin-baseline": "ad25766aefb5313b6bc4e2a4b78a2946f84fbf66",
   "homepage": "https://github.com/msclock/smooth7zip",
   "dependencies": [
     "spdlog",
