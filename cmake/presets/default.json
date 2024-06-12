@@ -1,0 +1,86 @@
+{
+  "version": 6,
+  "include": [
+    "base.json",
+    "generators/ninja.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "default",
+      "inherits": [
+        "base",
+        "ninja"
+      ]
+    },
+    {
+      "name": "default-dev",
+      "inherits": [
+        "default"
+      ],
+      "cacheVariables":{
+        "USE_CPPCHECK": "ON",
+        "USE_CLANGTIDY": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "inherits": "base",
+      "configurePreset": "default"
+    },
+    {
+      "name": "default-dev",
+      "inherits": "default",
+      "configurePreset": "default-dev"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "inherits": "base",
+      "configurePreset": "default"
+    },
+    {
+      "name": "default-dev",
+      "inherits": "default",
+      "configurePreset": "default-dev"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "default",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "default"
+        },
+        {
+          "type": "build",
+          "name": "default"
+        },
+        {
+          "type": "test",
+          "name": "default"
+        }
+      ]
+    },
+    {
+      "name": "default-dev",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "default-dev"
+        },
+        {
+          "type": "build",
+          "name": "default-dev"
+        },
+        {
+          "type": "test",
+          "name": "default-dev"
+        }
+      ]
+    }
+  ]
+}

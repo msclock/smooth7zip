@@ -1,0 +1,19 @@
+find_package(GTest CONFIG REQUIRED)
+
+include(GoogleTest)
+
+file(GLOB files "*.cpp")
+
+foreach(_file ${files})
+  get_filename_component(file_basename ${_file} NAME_WE)
+  add_executable(${file_basename} ${_file})
+  target_link_libraries(${file_basename} PRIVATE GTest::gtest_main smooth7zip)
+  target_compile_definitions(
+    ${file_basename}
+    PRIVATE TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/test_data")
+  warn_target(${file_basename} EXCLUDE_FLAGS -Wnon-virtual-dtor)
+  harden_target(${file_basename})
+  sanitize_target(${file_basename})
+  target_code_coverage(${file_basename} ALL)
+  gtest_discover_tests(${file_basename})
+endforeach()
