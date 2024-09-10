@@ -1,0 +1,25 @@
+_commit: v1.6.17
+_src_path: https://github.com/serious-scaffold/ss-cpp
+author_email: msclock@126.com
+author_name: l.feng
+codecov_notify_builds: 1
+codecov_threshold: 5%
+compile_target: smooth7zip
+copyright_holder: l.feng
+copyright_license: Apache Software License
+copyright_year: '2024'
+create_devcontainer: true
+docs_type: mkdocs
+exe_target: ''
+header_target: ''
+organization_name: msclock
+project_description: A wrapper for 7zip
+project_name: Smooth7zip
+repo_name: smooth7zip
+repo_namespace: msclock
+repo_platform: github
+use_cdash: false
+use_codecov: true
+use_codeql: true
+use_conan: false
+use_cpm: false

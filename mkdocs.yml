@@ -1,0 +1,148 @@
+site_name: Smooth7zip
+site_description: A wrapper for 7zip
+site_url: https://msclock.github.io/smooth7zip
+repo_url: https://github.com/msclock/smooth7zip
+repo_name: msclock/smooth7zip
+copyright: Copyright &copy; 2024 l.feng
+edit_uri: edit/master
+docs_dir: .
+
+exclude_docs: |
+  out
+  docs/includes
+
+theme:
+  name: material
+
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+    - navigation.footer
+    - navigation.instant
+    - navigation.path
+    - navigation.sections
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    # - toc.integrate
+
+  palette:
+    # Palette toggle for automatic mode
+    - media: (prefers-color-scheme)
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  languages: en
+
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+
+extra:
+  generator: false
+
+extra_css:
+  - docs/css/mkdocstrings.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.tasklist
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      check_paths: true
+      auto_append:
+        - docs/includes/abbreviations.md
+  - toc:
+      permalink: ¤
+
+plugins:
+  - search
+  - same-dir
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      type: datetime
+      exclude:
+        - out/*
+        - smooth7zip/*.md
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+  - mkdoxy:
+      projects:
+        smooth7zip:
+          src-dirs: src/smooth7zip/include src/smooth7zip/src
+          full-doc: true
+          doxy-cfg:
+            FILE_PATTERNS: '*.cpp *.h*'
+            RECURSIVE: true
+
+
+
+watch:
+  - docs
+  - LICENSE
+  - README.md
+  - mkdocs.yml
+
+nav:
+  - Home: docs/index.md
+  - References:
+      - smooth7zip API:
+          - smooth7zip:
+              - Links: smooth7zip/links.md
+              - Classes:
+                  - Class List: smooth7zip/annotated.md
+                  - Class Index: smooth7zip/classes.md
+                  - Class Hierarchy: smooth7zip/hierarchy.md
+                  - Class Members: smooth7zip/class_members.md
+                  - Class Member Functions: smooth7zip/class_member_functions.md
+                  - Class Member Variables: smooth7zip/class_member_variables.md
+                  - Class Member Typedefs: smooth7zip/class_member_typedefs.md
+                  - Class Member Enumerations: smooth7zip/class_member_enums.md
+              - Namespaces:
+                  - Namespace List: smooth7zip/namespaces.md
+                  - Namespace Members: smooth7zip/namespace_members.md
+                  - Namespace Member Functions: smooth7zip/namespace_member_functions.md
+                  - Namespace Member Variables: smooth7zip/namespace_member_variables.md
+                  - Namespace Member Typedefs: smooth7zip/namespace_member_typedefs.md
+                  - Namespace Member Enumerations: smooth7zip/namespace_member_enums.md
+              - Functions: smooth7zip/functions.md
+              - Variables: smooth7zip/variables.md
+              - Macros: smooth7zip/macros.md
+              - Files: smooth7zip/files.md
