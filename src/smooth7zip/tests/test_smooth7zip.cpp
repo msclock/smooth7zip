@@ -83,7 +83,7 @@ TEST_F(smooth7zip_command, a) {
     CMyComPtr<IArchiveUpdateCallback2> update_callback(update_callback_spec);
 
     // Out Stream
-    const auto archive_path = this->test_system_tmp_dir_ / "temp.zip";
+    const auto archive_path = this->system_test_tmp_dir_ / "temp.zip";
     auto archive_name = FString(archive_path.c_str());
     auto *out_file_stream_spec = new COutFileStream;
     ASSERT_TRUE(out_file_stream_spec->Create(archive_name, True));
@@ -180,7 +180,7 @@ TEST_F(smooth7zip_command, x) {
 
     // Extract command
     auto *extract_callback_spec = new smooth7zip::archive_extract_callback(handler);
-    auto extract_out_dir = FString(this->test_system_tmp_dir_.c_str());
+    auto extract_out_dir = FString(this->system_test_tmp_dir_.c_str());
     NWindows::NFile::NName::NormalizeDirPathPrefix(extract_out_dir);
     extract_callback_spec->in_archive = in_archive;
     extract_callback_spec->extract_out_dir = extract_out_dir;
@@ -194,7 +194,7 @@ TEST_F(smooth7zip_command, x) {
 
     CMyComPtr<IArchiveExtractCallback> extract_callback(extract_callback_spec);
     EXPECT_EQ(in_archive->Extract(nullptr, static_cast<UInt32>(-1), false, extract_callback), S_OK);
-    EXPECT_FALSE(std::filesystem::is_empty(this->test_system_tmp_dir_));
+    EXPECT_FALSE(std::filesystem::is_empty(this->system_test_tmp_dir_));
 }
 
 TEST(smooth7zip, archive) {
@@ -205,8 +205,8 @@ TEST(smooth7zip, archive) {
 TEST_F(smooth7zip_command, archive_x) {
     auto zip_file = this->test_data_dir_ / "regular.zip";
     auto archive = smooth7zip::archive(zip_file, smooth7zip::archive::open_mode::read);
-    archive.extract_to(this->test_system_tmp_dir_);
-    EXPECT_FALSE(std::filesystem::is_empty(this->test_system_tmp_dir_));
+    archive.extract_to(this->system_test_tmp_dir_);
+    EXPECT_FALSE(std::filesystem::is_empty(this->system_test_tmp_dir_));
 }
 
 TEST_F(smooth7zip_command, archive_l) {
@@ -219,7 +219,7 @@ TEST_F(smooth7zip_command, archive_a) {
     auto zip_file = this->test_data_dir_ / "regular.zip";
     auto archive = smooth7zip::archive(zip_file, smooth7zip::archive::open_mode::write);
     auto include_path = std::filesystem::directory_entry(this->test_data_dir_ / ".." / ".." / "include");
-    auto saved_path = this->test_system_tmp_dir_ / "temp.zip";
+    auto saved_path = this->system_test_tmp_dir_ / "temp.zip";
     archive.add_directory(include_path.path());
     archive.compress_to(saved_path);
     EXPECT_TRUE(std::filesystem::exists(saved_path));

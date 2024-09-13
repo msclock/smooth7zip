@@ -21,26 +21,6 @@ public:
         write // add new files to new archive or existing archive
     };
 
-    class archive_entry {
-    public:
-        std::int32_t get_index() const { return -1; }
-
-        std::string get_name() const { return {}; }
-
-        bool is_opened() const { return false; }
-
-    private:
-        friend class archive;
-
-        archive_entry(archive& _archive_ref) : archive_ref_(_archive_ref) {}
-
-        archive& archive_ref_;
-    };
-
-    class archive_items {
-    public:
-    };
-
     archive(const std::string _path = "",
             const open_mode _mode = open_mode::read,
             const format::format _format = format::format{})

@@ -14,7 +14,7 @@ namespace test {
 namespace utils {
 class rc_dir_test : public ::testing::Test {
 protected:
-    std::filesystem::path test_system_tmp_dir_;
+    std::filesystem::path system_test_tmp_dir_;
 #ifndef TEST_DATA_DIR
 #error "TEST_DATA_DIR is not defined"
 #else
@@ -26,11 +26,11 @@ protected:
 
         std::uniform_int_distribution<> dis(1000, 9999);
         auto suffix_dir_name = std::to_string(dis(gen)) + '_' + std::to_string(dis(gen));
-        test_system_tmp_dir_ = std::filesystem::temp_directory_path() / suffix_dir_name;
-        std::filesystem::create_directory(test_system_tmp_dir_);
+        this->system_test_tmp_dir_ = this->test_data_dir_ / "tmp" / suffix_dir_name;
+        std::filesystem::create_directory(system_test_tmp_dir_);
     }
 
-    void TearDown() override { std::filesystem::remove_all(test_system_tmp_dir_); }
+    void TearDown() override { std::filesystem::remove_all(system_test_tmp_dir_); }
 };
 
 std::string to_string(const GUID& guid) {
