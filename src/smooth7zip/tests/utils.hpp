@@ -27,7 +27,7 @@ protected:
         std::uniform_int_distribution<> dis(1000, 9999);
         auto suffix_dir_name = std::to_string(dis(gen)) + '_' + std::to_string(dis(gen));
         this->system_test_tmp_dir_ = this->test_data_dir_ / "tmp" / suffix_dir_name;
-        std::filesystem::create_directory(system_test_tmp_dir_);
+        std::filesystem::create_directories(system_test_tmp_dir_);
     }
 
     void TearDown() override { std::filesystem::remove_all(system_test_tmp_dir_); }
