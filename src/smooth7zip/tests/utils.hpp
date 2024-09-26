@@ -10,23 +10,27 @@
 #include <7zip/7zip.h>
 #include <gtest/gtest.h>
 
+#ifndef TESTS_DIR
+#error "TESTS_DIR is not defined"
+#endif
+
+#define TEST_DATA_DIR_NAME "test_data"
+#define TEST_TEMP_DIR_NAME "tmp"
+
 namespace test {
 namespace utils {
 class rc_dir_test : public ::testing::Test {
 protected:
+    std::filesystem::path tests_dir_{TESTS_DIR};
+    std::filesystem::path test_data_dir_;
     std::filesystem::path system_test_tmp_dir_;
-#ifndef TEST_DATA_DIR
-#error "TEST_DATA_DIR is not defined"
-#else
-    std::filesystem::path test_data_dir_{TEST_DATA_DIR};
-#endif
 
     void SetUp() override {
+        this->test_data_dir_ = this->tests_dir_ / TEST_DATA_DIR_NAME;
         std::mt19937_64 gen(std::random_device{}());
-
         std::uniform_int_distribution<> dis(1000, 9999);
-        auto suffix_dir_name = std::to_string(dis(gen)) + '_' + std::to_string(dis(gen));
-        this->system_test_tmp_dir_ = this->test_data_dir_ / "tmp" / suffix_dir_name;
+        auto suffix_dir_name = std::to_string(dis(gen)) + std::to_string(dis(gen));
+        this->system_test_tmp_dir_ = this->test_data_dir_ / TEST_TEMP_DIR_NAME / suffix_dir_name;
         std::filesystem::create_directories(system_test_tmp_dir_);
     }
 

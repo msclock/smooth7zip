@@ -8,9 +8,8 @@ foreach(_file ${files})
   get_filename_component(file_basename ${_file} NAME_WE)
   add_executable(${file_basename} ${_file})
   target_link_libraries(${file_basename} PRIVATE GTest::gtest_main smooth7zip)
-  target_compile_definitions(
-    ${file_basename}
-    PRIVATE TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/test_data")
+  target_compile_definitions(${file_basename}
+                             PRIVATE TESTS_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
   warn_target(${file_basename} EXCLUDE_FLAGS -Wnon-virtual-dtor)
   harden_target(${file_basename})
   sanitize_target(${file_basename})
