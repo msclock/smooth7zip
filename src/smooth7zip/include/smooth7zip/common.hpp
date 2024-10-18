@@ -9,24 +9,6 @@
 #include <7zip/CPP/Common/StringConvert.h>
 #include <7zip/CPP/Windows/PropVariant.h>
 
-#include <fmt/format.h>
-
-#if S7_CPP_STANDARD < 23
-#include <tl/expected.hpp>
-#else
-#include <expected>
-#endif
-
-#if (defined(_MSVC_LANG) && _MSVC_LANG >= 202002L) || (defined(__cplusplus) && __cplusplus >= 202002L)
-#define S7_CPP_STANDARD 20
-#elif (defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || (defined(__cplusplus) && __cplusplus >= 201703L)
-#define S7_CPP_STANDARD 17
-#elif (defined(_MSVC_LANG) && _MSVC_LANG >= 201402L) || (defined(__cplusplus) && __cplusplus >= 201402L)
-#define S7_CPP_STANDARD 14
-#else
-#define S7_CPP_STANDARD 11
-#endif
-
 #if _WIN32
 #define S7_UNKNOWN_DESTRUCTOR(x)         x
 #define S7_UNKNOWN_VIRTUAL_DESTRUCTOR(x) virtual x
@@ -39,30 +21,6 @@
 #define S7_STDMETHOD(method, ...)          MY_STDMETHOD_NOEXCEPT(method, __VA_ARGS__) override
 
 namespace smooth7zip {
-
-#if S7_CPP_STANDARD < 23
-template <class T, class E>
-using expected = tl::expected<T, E>;
-template <class E>
-using unexpected = tl::unexpected<E>;
-
-template <class E>
-unexpected<typename std::decay<E>::type> make_unexpected(E&& e) {
-    return tl::make_unexpected(std::forward<E>(e));
-}
-
-#else
-template <class T, class E>
-using expected = std::expected<T, E>;
-template <class E>
-using unexpected = std::unexpected<E>;
-
-template <class E>
-unexpected<typename std::decay<E>::type> make_unexpected(E&& e) {
-    return std::make_unexpected(std::forward<E>(e));
-}
-#endif
-
 namespace strings {
 
 // Convert a wide string to an ANSI string.
@@ -96,5 +54,4 @@ inline std::wstring to_wstring(const std::string& _str) {
 }
 
 }; // namespace strings
-
 } // namespace smooth7zip

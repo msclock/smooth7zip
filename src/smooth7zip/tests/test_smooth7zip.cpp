@@ -2,28 +2,25 @@
 
 #include <smooth7zip/smooth7zip.hpp>
 
-#include <7zip/CPP/Windows/FileName.h>        // NormalizeDirPathPrefix
-#include <7zip/CPP/Windows/PropVariantConv.h> // ConvertPropVariantToShortString
-
-#include <stack>
 #include "utils.hpp"
 
 constexpr auto id_format_apm = GUID{0x23170F69, 0x40C1, 0x278A, {0x10, 0x00, 0x00, 0x01, 0x10, 0xD4, 0x00, 0x00}};
 
 TEST(smooth7zip, format) {
     // Test to load the format registry correctly
-    EXPECT_EQ(smooth7zip::format::format_registry::instance().count(), 55);
+    auto& reg = smooth7zip::format::format_registry::instance();
+    EXPECT_EQ(reg.count(), 55);
 
     // Test to get a format by name
-    auto format = smooth7zip::format::format_registry::instance().get("APM");
+    auto format = reg.get("APM");
     EXPECT_TRUE(format.is_valid());
 
     // Test to get a format by index
-    auto apm_format_from_index = smooth7zip::format::format_registry::instance().get(format.index);
+    auto apm_format_from_index = reg.get(format.index);
     EXPECT_EQ(apm_format_from_index.name, "APM");
 
     // Test iterate over all formats
-    for (const auto &f : smooth7zip::format::format_registry::instance()) {
+    for (const auto& f : reg) {
         EXPECT_TRUE(f.is_valid());
     }
 
