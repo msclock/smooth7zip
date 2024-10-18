@@ -24,7 +24,7 @@ jobs:
       - name: Generate a bot token with BOT_APP_ID
         id: bot_token
         if: vars.BOT_APP_ID && env.BOT_PRIVATE_KEY != null
-        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1
         env:
           BOT_PRIVATE_KEY: ${{ secrets.BOT_PRIVATE_KEY }}
         with:
@@ -45,17 +45,16 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.bot_token.outputs.token || secrets.PAT || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+      - name: Setup Node.js
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
         with:
-          node-version: 20
+          node-version: lts/*
 
-      - uses: cycjimmy/semantic-release-action@v4
-        id: semantic
-        with:
-          semantic_version: 22
-          extra_plugins: |
-            @semantic-release/exec
-            @semantic-release/github
-            conventional-changelog-conventionalcommits@7
+      - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ steps.bot_token.outputs.token || secrets.PAT || secrets.GITHUB_TOKEN }}
+        run: >
+          npx
+          --package conventional-changelog-conventionalcommits@7
+          --package semantic-release@22
+          semantic-release

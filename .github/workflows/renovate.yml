@@ -19,7 +19,7 @@ jobs:
         RENOVATE_PLATFORM: github
         RENOVATE_REPOSITORIES: '["${{ github.repository }}"]'
         RENOVATE_REPOSITORY_CACHE: enabled
-      image: ghcr.io/renovatebot/renovate:38.59.2@sha256:43a32c54fe9a67fa6da72733c3fa38c836ccb8190fff7479681942f0e2683e15
+      image: ghcr.io/renovatebot/renovate:38.110.2@sha256:06665449c11c61011319ef8f1cd6e00a265d2692e84586f964ba368d4f67591d
       options: --user root
     runs-on: ubuntu-22.04
     steps:
@@ -28,7 +28,7 @@ jobs:
       - name: Generate a token with GitHub App if App ID exists
         id: generate-token
         if: vars.BOT_APP_ID
-        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1
         with:
           app-id: ${{ vars.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
