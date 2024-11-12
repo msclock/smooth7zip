@@ -65,7 +65,7 @@
       ]
     },
     {
-      "description": " Update vcpkg.json builtin-baseline with git hash",
+      "description": "Update vcpkg.json builtin-baseline with git hash",
       "customType": "regex",
       "currentValueTemplate": "master",
       "datasourceTemplate": "git-refs",
